@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Palatino Linotype", Palatino, serif;
+  --font-sans: Manrope, "Segoe UI", sans-serif;
+  --color-ivory: #f7f4ef;
+  --color-paper: #fffcf8;
+  --color-sand: #efeae3;
+  --color-stone: #e3dcd2;
+  --color-line: #e0d9cf;
+  --color-ink: #161d27;
+  --color-navy: #101820;
+  --color-slate: #243140;
+  --color-graphite: #3c4654;
+  --color-muted: #5c6570;
+  --color-champagne: #b7a48a;
+  --color-bronze: #6f5b3c;
+  --color-cream: #e7d7bc;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: #e7dcc8;
+    color: #161d27;
+  }
+}
+
+.hover-card {
+  --x: 50%;
+  --y: 0%;
+}
+
+.hover-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    180px circle at var(--x) var(--y),
+    rgba(183, 164, 138, 0.18),
+    transparent 68%
+  );
+}
+
+.hover-card:hover::before,
+.hover-card:focus-within::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
