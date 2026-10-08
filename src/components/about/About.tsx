@@ -35,7 +35,7 @@ export function About() {
           <p className="mt-6 text-sm tracking-wide text-graphite">{professional.oab}</p>
           <div className="mt-10">
             <h3 className="text-2xl text-ink">Formação e especializações</h3>
-            <ul className="mt-6 space-y-6 border-l border-champagne/70 pl-6">
+            <ul className="mt-6 space-y-6 border-l border-gold/45 pl-6">
               {credentials.map((item) => (
                 <li key={item.title}>
                   <p className="font-serif text-2xl leading-snug text-ink">{item.title}</p>

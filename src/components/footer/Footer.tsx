@@ -8,13 +8,13 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-navy text-ivory">
+    <footer className="border-t border-gold/20 bg-navy text-ivory">
       <Container className="py-16 pb-28 md:pb-20">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="font-serif text-3xl leading-tight">{professional.fullName}</p>
             <p className="mt-3 text-[11px] tracking-[0.22em] text-cream uppercase">{professional.role}</p>
-            <p className="mt-4 text-sm text-[#d5cfc6]">{professional.oab}</p>
+            <p className="mt-4 text-sm text-cream/85">{professional.oab}</p>
           </div>
           <nav aria-label="Rodapé">
             <p className="text-[11px] tracking-[0.18em] text-cream uppercase">Mapa</p>
@@ -23,7 +23,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="inline-flex min-h-11 items-center text-sm text-[#d5cfc6] transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
+                    className="inline-flex min-h-11 items-center text-sm text-cream/85 transition-colors hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                   >
                     {link.label}
                   </Link>
@@ -38,14 +38,14 @@ export function Footer() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center text-sm text-[#d5cfc6] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
+                className="inline-flex min-h-11 items-center text-sm text-cream/85 hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
               >
                 {contact.phoneDisplay}
                 <span className="sr-only">, WhatsApp, abre em nova aba</span>
               </a>
               <a
                 href={`mailto:${contact.email}`}
-                className="inline-flex min-h-11 items-center text-sm break-all text-[#d5cfc6] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
+                className="inline-flex min-h-11 items-center text-sm break-all text-cream/85 hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
               >
                 {contact.email}
               </a>
@@ -57,15 +57,15 @@ export function Footer() {
               href={contact.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex min-h-11 items-center text-sm text-[#d5cfc6] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
+              className="mt-4 inline-flex min-h-11 items-center text-sm text-cream/85 hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             >
               {contact.instagram}
               <span className="sr-only"> (abre em nova aba)</span>
             </a>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#d5cfc6]">{contact.coverage}</p>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/85">{contact.coverage}</p>
           </div>
         </div>
-        <div className="mt-14 border-t border-white/10 pt-6 text-sm leading-relaxed text-[#cfc8be]">
+        <div className="mt-14 border-t border-gold/15 pt-6 text-sm leading-relaxed text-cream/75">
           <p>© {year} {professional.fullName}. Todos os direitos reservados.</p>
           <p className="mt-2">As informações deste site têm caráter institucional e não representam consulta jurídica.</p>
         </div>

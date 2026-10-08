@@ -13,7 +13,7 @@ export function Hero() {
       <Spotlight />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-[-10%] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(16,24,32,0.05),transparent_70%)]"
+        className="pointer-events-none absolute bottom-0 left-[-10%] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(15,47,92,0.08),transparent_70%)]"
       />
       <Container className="relative grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-7">

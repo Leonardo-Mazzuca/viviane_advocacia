@@ -63,8 +63,8 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 h-16 border-t border-champagne/80 border-b transition-colors duration-300",
-        scrolled ? "border-b-line bg-ivory/92 backdrop-blur-md" : "border-b-transparent bg-transparent",
+        "fixed inset-x-0 top-0 z-50 h-16 border-t-2 border-gold/45 border-b transition-colors duration-300",
+        scrolled ? "border-b-line bg-ivory/95 backdrop-blur-md shadow-[0_8px_30px_-24px_rgba(15,47,92,0.35)]" : "border-b-transparent bg-transparent",
       )}
     >
       <Container className="flex h-full items-center justify-between gap-3">
@@ -87,7 +87,7 @@ export function Navbar() {
                 aria-current={active ? "location" : undefined}
                 className={cn(
                   "text-[13px] whitespace-nowrap text-graphite transition-colors hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze",
-                  active && "text-ink",
+                  active && "font-medium text-navy",
                 )}
               >
                 {link.label}

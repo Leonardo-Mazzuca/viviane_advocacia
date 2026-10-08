@@ -18,7 +18,7 @@ export function BlogPreview() {
           </SectionIntro>
           <Link
             to="/blog"
-            className="inline-flex min-h-11 items-center text-sm text-navy underline decoration-champagne/70 underline-offset-4 hover:decoration-bronze focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze"
+            className="inline-flex min-h-11 items-center text-sm text-navy underline decoration-gold/60 underline-offset-4 hover:decoration-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
           >
             Ver todos os conteúdos
           </Link>

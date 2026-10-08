@@ -12,7 +12,7 @@ export function HoverCard({ children, className }: { children: ReactNode; classN
     <div
       onMouseMove={onMouseMove}
       className={cn(
-        "hover-card relative h-full border border-line bg-paper transition duration-300 hover:-translate-y-1 hover:border-bronze/40 hover:shadow-[0_18px_40px_-28px_rgba(16,24,32,0.55)]",
+        "hover-card relative h-full border border-line bg-paper transition duration-300 hover:-translate-y-1 hover:border-gold/45 hover:shadow-[0_18px_40px_-28px_rgba(15,47,92,0.28)]",
         className,
       )}
     >

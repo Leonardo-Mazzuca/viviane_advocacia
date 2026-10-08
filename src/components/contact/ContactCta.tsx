@@ -13,7 +13,7 @@ export function ContactCta() {
             <h2 id="cta-titulo" className="text-[2.4rem] leading-[1.1] text-ivory sm:text-5xl md:text-6xl">
               Tem uma dúvida sobre o seu imóvel?
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-[#ddd6cc] sm:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-cream/90 sm:text-lg">
               Entre em contato e descubra qual pode ser o melhor caminho para regularizar e proteger o seu patrimônio.
             </p>
             <MovingBorderLink

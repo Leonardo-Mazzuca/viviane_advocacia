@@ -32,17 +32,26 @@ for (const route of routes) {
 writePage("/pagina-nao-encontrada", path.join(dist, "404.html"))
 
 let robots = "User-agent: *\nAllow: /\n"
-if (SITE_URL) {
+const deployUrl = (process.env.VITE_SITE_URL ?? "")
+  .replace(/\/$/, "")
+  || (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL.replace(/^https?:\/\//, "")}`
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL.replace(/^https?:\/\//, "")}`
+      : "")
+const siteUrl = SITE_URL || deployUrl
+
+if (siteUrl) {
   const body = sitemapEntries
     .map((entry) => {
-      const loc = new URL(entry.path, `${SITE_URL}/`).toString()
+      const loc = new URL(entry.path, `${siteUrl}/`).toString()
       return `  <url>\n    <loc>${loc}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>${entry.priority}</priority>\n  </url>`
     })
     .join("\n")
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`
   fs.writeFileSync(path.join(dist, "sitemap.xml"), xml)
-  robots += `\nSitemap: ${SITE_URL}/sitemap.xml\n`
-  console.log(`sitemap ${SITE_URL}/sitemap.xml`)
+  robots += `\nSitemap: ${siteUrl}/sitemap.xml\n`
+  console.log(`sitemap ${siteUrl}/sitemap.xml`)
 } else {
   console.log("VITE_SITE_URL vazio: canonical e sitemap não foram gerados.")
 }
