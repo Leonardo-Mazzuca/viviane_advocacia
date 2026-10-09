@@ -37,7 +37,7 @@ export function Differentials() {
           {pillars.map((pillar) => (
             <StaggerItem key={pillar.title}>
               <BentoCell className="h-full">
-                <p className="text-[11px] tracking-[0.18em] text-gold uppercase">{pillar.number}</p>
+                <p className="text-[11px] tracking-[0.18em] text-bronze uppercase">{pillar.number}</p>
                 <h3 className="mt-4 text-3xl text-ink">{pillar.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.text}</p>
               </BentoCell>

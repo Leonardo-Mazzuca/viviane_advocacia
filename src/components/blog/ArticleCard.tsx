@@ -12,7 +12,7 @@ export function ArticleCard({ post }: { post: BlogPost }) {
           to={`/blog/${post.slug}`}
           className="relative z-[1] flex h-full flex-col p-7 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze sm:p-8"
         >
-          <div className="flex items-center justify-between gap-3 text-[11px] tracking-[0.16em] text-gold uppercase">
+          <div className="flex items-center justify-between gap-3 text-[11px] tracking-[0.16em] text-bronze uppercase">
             <span>{post.category}</span>
             <span className="text-right tracking-normal text-muted normal-case">
               {post.publishedAt ? <time dateTime={post.publishedAt}>{formatPostDate(post.publishedAt)}</time> : "Em preparação"}

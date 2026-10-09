@@ -81,13 +81,13 @@ export function Contact() {
                   <Icon className="h-4 w-4" />
                 </span>
                 <div className="min-w-0">
-                  <dt className="text-[11px] tracking-[0.18em] text-gold uppercase">{row.label}</dt>
+                  <dt className="text-[11px] tracking-[0.18em] text-bronze uppercase">{row.label}</dt>
                   <dd className="mt-1">
                     <a
                       href={row.href}
                       target={row.external ? "_blank" : undefined}
                       rel={row.external ? "noopener noreferrer" : undefined}
-                      className="font-serif text-2xl break-words text-ink underline decoration-transparent underline-offset-4 hover:decoration-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                      className="font-serif text-2xl break-words text-ink underline decoration-transparent underline-offset-4 hover:decoration-champagne focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze"
                     >
                       {row.value}
                       {row.external ? <span className="sr-only"> (abre em nova aba)</span> : null}

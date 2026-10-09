@@ -39,7 +39,7 @@ export function Blog() {
                 className={
                   pressed
                     ? "min-h-11 border border-navy bg-navy px-4 text-sm text-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze"
-                    : "min-h-11 border border-line bg-paper px-4 text-sm text-graphite hover:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                    : "min-h-11 border border-line bg-paper px-4 text-sm text-graphite hover:border-bronze focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze"
                 }
               >
                 {item}

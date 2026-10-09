@@ -35,7 +35,7 @@ export function PracticeAreas() {
                   <HoverCard className="h-full">
                     <div className="relative z-[1] flex h-full flex-col p-7 sm:p-8">
                       <div className="flex items-start justify-between gap-4">
-                        <p className="font-serif text-xl text-gold">{area.number}</p>
+                        <p className="font-serif text-xl text-bronze">{area.number}</p>
                         <span className="flex h-10 w-10 items-center justify-center border border-line text-navy">
                           <Icon className="h-[18px] w-[18px]" strokeWidth={1.25} aria-hidden="true" />
                         </span>

@@ -43,13 +43,13 @@ export function BlogPost() {
           <nav aria-label="Trilha" className="text-sm text-muted">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
-                <Link to="/" className="underline decoration-gold/60 underline-offset-4 hover:text-ink">
+                <Link to="/" className="underline decoration-champagne/70 underline-offset-4 hover:text-ink">
                   Início
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link to="/blog" className="underline decoration-gold/60 underline-offset-4 hover:text-ink">
+                <Link to="/blog" className="underline decoration-champagne/70 underline-offset-4 hover:text-ink">
                   Conteúdos
                 </Link>
               </li>
@@ -59,7 +59,7 @@ export function BlogPost() {
               </li>
             </ol>
           </nav>
-          <p className="mt-8 text-[11px] tracking-[0.18em] text-gold uppercase">{post.category}</p>
+          <p className="mt-8 text-[11px] tracking-[0.18em] text-bronze uppercase">{post.category}</p>
           <h1 className="mt-4 text-[2.2rem] leading-[1.12] text-ink sm:text-5xl">{post.title}</h1>
           <p className="mt-4 text-sm text-muted">
             {professional.fullName}

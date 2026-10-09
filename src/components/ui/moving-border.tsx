@@ -48,11 +48,11 @@ export function MovingBorderLink({ children, className, ...props }: MovingBorder
   }, [])
 
   return (
-    <a {...props} className={cn("relative inline-flex overflow-hidden bg-gold/55 p-px", className)}>
+    <a {...props} className={cn("relative inline-flex overflow-hidden bg-champagne/50 p-px", className)}>
       {active ? (
         <span className="pointer-events-none absolute inset-0" aria-hidden="true">
           <MovingBorder duration={8000}>
-            <span className="block h-14 w-14 bg-[radial-gradient(circle,#eedcad,transparent_62%)]" />
+            <span className="block h-14 w-14 bg-[radial-gradient(circle,#f3e6cf,transparent_62%)]" />
           </MovingBorder>
         </span>
       ) : null}
