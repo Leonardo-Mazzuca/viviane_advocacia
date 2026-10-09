@@ -6,33 +6,37 @@ type TextRevealProps = {
   text: string
   className?: string
   id?: string
+  as?: "h1" | "h2" | "h3"
 }
 
-export function TextReveal({ text, className, id }: TextRevealProps) {
+export function TextReveal({ text, className, id, as = "h1" }: TextRevealProps) {
   if (typeof window === "undefined") {
+    const Tag = as
     return (
-      <h1 id={id} className={className}>
+      <Tag id={id} className={className}>
         {text}
-      </h1>
+      </Tag>
     )
   }
 
-  return <AnimatedHeadline text={text} className={className} id={id} />
+  return <AnimatedHeadline text={text} className={className} id={id} as={as} />
 }
 
-function AnimatedHeadline({ text, className, id }: TextRevealProps) {
+function AnimatedHeadline({ text, className, id, as = "h1" }: TextRevealProps) {
   const reduce = useReducedMotion()
+  const Tag = as
+
   if (reduce) {
     return (
-      <h1 id={id} className={className}>
+      <Tag id={id} className={className}>
         {text}
-      </h1>
+      </Tag>
     )
   }
 
   const words = text.split(" ")
   return (
-    <h1 id={id} className={className}>
+    <Tag id={id} className={className}>
       {words.map((word, index) => (
         <motion.span
           key={`${word}-${index}`}
@@ -45,6 +49,6 @@ function AnimatedHeadline({ text, className, id }: TextRevealProps) {
           {index < words.length - 1 ? "\u00A0" : ""}
         </motion.span>
       ))}
-    </h1>
+    </Tag>
   )
 }

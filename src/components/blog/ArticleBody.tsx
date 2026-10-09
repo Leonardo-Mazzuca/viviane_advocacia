@@ -6,7 +6,7 @@ export function ArticleBody({ blocks }: { blocks: BlogBlock[] }) {
       {blocks.map((block, index) => {
         if (block.type === "h2") {
           return (
-            <h2 key={index} className="pt-6 text-3xl leading-tight text-ink">
+            <h2 key={index} className="pt-6 text-3xl leading-tight text-navy">
               {block.text}
             </h2>
           )

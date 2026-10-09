@@ -18,7 +18,14 @@ export const contact = {
   instagram: "@advogadavivitambellini",
   instagramUrl: "https://www.instagram.com/advogadavivitambellini/",
   hours: "Segunda a sexta-feira, das 9h às 18h.",
-  coverage: "Atendimento online em todo o Brasil.",
+  coverage: "Escritório em São Paulo (SP). Atendimento online em todo o Brasil.",
+} as const
+
+export const serviceCoverage = {
+  officeTitle: "Escritório em São Paulo (SP)",
+  officeDetail: "Atuação presencial na capital paulista.",
+  onlineTitle: "Atendimento online em todo o Brasil",
+  onlineDetail: "Consultas e acompanhamento jurídico à distância, com a mesma dedicação.",
 } as const
 
 /** Fotografia em public/imgs/ (origem: pasta imgs na raiz do projeto). */

@@ -1,4 +1,5 @@
-import { Clock, Mail, MessageCircle, type LucideIcon } from "lucide-react"
+import { Clock, Mail, type LucideIcon } from "lucide-react"
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon"
 import type { ReactNode } from "react"
 import { contact } from "@/data/site"
 import { whatsappUrl } from "@/lib/whatsapp"
@@ -6,6 +7,7 @@ import { Container } from "@/components/layout/Container"
 import { Section } from "@/components/layout/Section"
 import { buttonClass } from "@/components/ui/button-styles"
 import { Eyebrow } from "@/components/ui/eyebrow"
+import { CoverageHighlight } from "@/components/ui/coverage-highlight"
 
 function mark(Icon: LucideIcon) {
   return function Mark({ className }: { className?: string }) {
@@ -35,7 +37,7 @@ const rows: {
     value: contact.phoneDisplay,
     href: whatsappUrl,
     external: true,
-    icon: mark(MessageCircle),
+    icon: ({ className }: { className?: string }) => <WhatsAppIcon className={className} />,
   },
   {
     label: "E-mail",
@@ -55,19 +57,21 @@ const rows: {
 
 export function Contact() {
   return (
-    <Section id="contato" labelId="contato-titulo" className="bg-sand">
+    <Section id="contato" labelId="contato-titulo" className="bg-paper">
       <Container className="grid gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <Eyebrow>Contato</Eyebrow>
-          <h2 id="contato-titulo" className="text-[2.4rem] leading-[1.1] text-ink sm:text-5xl">
+          <h2 id="contato-titulo" className="text-[2.35rem] leading-[1.1] font-semibold tracking-[-0.02em] text-navy sm:text-[2.75rem] lg:text-[3rem]">
             Vamos conversar?
           </h2>
-          <p className="mt-5 text-lg text-graphite">{contact.coverage}</p>
+          <span aria-hidden="true" className="mt-5 block h-0.5 w-14 bg-gold sm:w-16" />
+          <CoverageHighlight className="mt-6" />
           <p className="mt-3 flex items-center gap-2 text-sm text-muted">
             <Clock className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
             {contact.hours}
           </p>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={buttonClass("primary", "mt-8 w-full sm:w-auto")}>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={buttonClass("whatsapp", "mt-8 w-full sm:w-auto")}>
+            <WhatsAppIcon className="h-5 w-5 shrink-0" />
             Falar pelo WhatsApp
             <span className="sr-only"> (abre em nova aba)</span>
           </a>
@@ -81,13 +85,13 @@ export function Contact() {
                   <Icon className="h-4 w-4" />
                 </span>
                 <div className="min-w-0">
-                  <dt className="text-[11px] tracking-[0.18em] text-bronze uppercase">{row.label}</dt>
+                  <dt className="text-[11px] tracking-[0.18em] text-gold uppercase">{row.label}</dt>
                   <dd className="mt-1">
                     <a
                       href={row.href}
                       target={row.external ? "_blank" : undefined}
                       rel={row.external ? "noopener noreferrer" : undefined}
-                      className="font-serif text-2xl break-words text-ink underline decoration-transparent underline-offset-4 hover:decoration-champagne focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze"
+                      className="font-serif text-2xl break-words text-navy underline decoration-transparent underline-offset-4 hover:decoration-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
                     >
                       {row.value}
                       {row.external ? <span className="sr-only"> (abre em nova aba)</span> : null}

@@ -3,6 +3,7 @@ import { getPostBySlug, isIndexable, readingMinutes, relatedPosts } from "@/data
 import { professional } from "@/data/site"
 import { articleSchema, breadcrumbSchema } from "@/lib/schema"
 import { whatsappUrl } from "@/lib/whatsapp"
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon"
 import { Seo } from "@/components/seo/Seo"
 import { JsonLd } from "@/components/seo/JsonLd"
 import { Container } from "@/components/layout/Container"
@@ -43,13 +44,13 @@ export function BlogPost() {
           <nav aria-label="Trilha" className="text-sm text-muted">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
-                <Link to="/" className="underline decoration-champagne/70 underline-offset-4 hover:text-ink">
+                <Link to="/" className="underline decoration-gold-light/70 underline-offset-4 hover:text-navy">
                   Início
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link to="/blog" className="underline decoration-champagne/70 underline-offset-4 hover:text-ink">
+                <Link to="/blog" className="underline decoration-gold-light/70 underline-offset-4 hover:text-navy">
                   Conteúdos
                 </Link>
               </li>
@@ -59,8 +60,11 @@ export function BlogPost() {
               </li>
             </ol>
           </nav>
-          <p className="mt-8 text-[11px] tracking-[0.18em] text-bronze uppercase">{post.category}</p>
-          <h1 className="mt-4 text-[2.2rem] leading-[1.12] text-ink sm:text-5xl">{post.title}</h1>
+          <p className="mt-8 text-[11px] tracking-[0.18em] text-gold uppercase">{post.category}</p>
+          <h1 className="mt-4 text-[2.35rem] leading-[1.1] font-semibold tracking-[-0.02em] text-navy sm:text-[2.75rem] lg:text-[3rem]">
+            {post.title}
+          </h1>
+          <span aria-hidden="true" className="mt-5 block h-0.5 w-14 bg-gold sm:w-16" />
           <p className="mt-4 text-sm text-muted">
             {professional.fullName}
             <span aria-hidden="true"> · </span>
@@ -75,9 +79,10 @@ export function BlogPost() {
             <ArticleBody blocks={post.blocks} />
           </div>
           <aside className="mt-12 border-t border-line pt-8">
-            <h2 className="text-3xl text-ink">Quer analisar o seu caso?</h2>
+            <h2 className="text-3xl font-semibold tracking-[-0.02em] text-navy sm:text-4xl">Quer analisar o seu caso?</h2>
             <p className="mt-3 text-graphite">O caminho adequado depende dos documentos e da situação concreta.</p>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={buttonClass("primary", "mt-6 w-full sm:w-auto")}>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={buttonClass("whatsapp", "mt-6 w-full sm:w-auto")}>
+              <WhatsAppIcon className="h-5 w-5 shrink-0" />
               Falar com a advogada
               <span className="sr-only"> (abre em nova aba)</span>
             </a>
@@ -85,7 +90,7 @@ export function BlogPost() {
         </article>
         {related.length > 0 ? (
           <section aria-labelledby="relacionados-titulo" className="mx-auto mt-20 max-w-6xl">
-            <h2 id="relacionados-titulo" className="text-3xl text-ink">
+            <h2 id="relacionados-titulo" className="text-3xl text-navy">
               Outros conteúdos
             </h2>
             <ul className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">

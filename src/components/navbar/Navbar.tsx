@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
-import { Menu, MessageCircle, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon"
 import { professional } from "@/data/site"
 import { navLinks } from "@/data/navigation"
 import { whatsappUrl } from "@/lib/whatsapp"
@@ -63,18 +64,18 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 h-16 border-t border-champagne/80 border-b transition-colors duration-300",
-        scrolled ? "border-b-line bg-ivory/92 backdrop-blur-md" : "border-b-transparent bg-transparent",
+        "fixed inset-x-0 top-0 z-50 h-16 border-t border-gold/35 border-b transition-colors duration-300",
+        scrolled ? "border-b-line bg-paper/95 shadow-[0_8px_30px_-24px_rgba(20,36,61,0.18)] backdrop-blur-md" : "border-b-transparent bg-paper/80 backdrop-blur-sm",
       )}
     >
       <Container className="flex h-full items-center justify-between gap-3">
         <Link
           to="/#inicio"
-          className="min-w-0 leading-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze"
+          className="min-w-0 leading-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
           aria-label="Viviane Tambellini — início"
         >
-          <span className="block truncate font-serif text-[1.15rem] text-ink sm:text-[1.35rem]">{professional.shortName}</span>
-          <span className="mt-1 block text-[10px] tracking-[0.28em] text-muted uppercase">{professional.role}</span>
+          <span className="block truncate font-serif text-[1.15rem] text-navy sm:text-[1.35rem]">{professional.shortName}</span>
+          <span className="mt-1 block text-[10px] tracking-[0.28em] text-gold uppercase">{professional.role}</span>
         </Link>
 
         <nav className="hidden items-center gap-4 xl:gap-6 lg:flex" aria-label="Principal">
@@ -86,8 +87,8 @@ export function Navbar() {
                 to={link.href}
                 aria-current={active ? "location" : undefined}
                 className={cn(
-                  "text-[13px] whitespace-nowrap text-graphite transition-colors hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze",
-                  active && "text-ink",
+                  "text-[13px] whitespace-nowrap text-muted transition-colors hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold",
+                  active && "font-medium text-navy",
                 )}
               >
                 {link.label}
@@ -101,24 +102,25 @@ export function Navbar() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-11 w-11 items-center justify-center text-navy lg:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-gold text-navy shadow-[0_8px_20px_-8px_rgba(184,149,80,0.8)] ring-1 ring-gold-light/50 lg:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy"
             aria-label="Falar pelo WhatsApp, abre em nova aba"
           >
-            <MessageCircle className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
+            <WhatsAppIcon className="h-5 w-5" />
           </a>
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={buttonClass("primary", "hidden px-4 text-sm lg:inline-flex")}
+            className={buttonClass("whatsapp", "hidden px-4 text-sm lg:inline-flex")}
           >
+            <WhatsAppIcon className="h-4 w-4 shrink-0" />
             <span className="xl:hidden">WhatsApp</span>
             <span className="hidden xl:inline">Falar pelo WhatsApp</span>
             <span className="sr-only"> (abre em nova aba)</span>
           </a>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center text-navy lg:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bronze"
+            className="inline-flex h-11 w-11 items-center justify-center text-navy lg:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             aria-expanded={open}
             aria-controls="menu-mobile"
             aria-label={open ? "Fechar menu" : "Abrir menu"}

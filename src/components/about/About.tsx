@@ -17,7 +17,7 @@ const credentials = [
 
 export function About() {
   return (
-    <Section id="sobre" labelId="sobre-titulo">
+    <Section id="sobre" labelId="sobre-titulo" className="bg-paper">
       <Container className="grid items-center gap-14 lg:grid-cols-12">
         <div className="lg:col-span-6">
           <SectionIntro
@@ -34,11 +34,11 @@ export function About() {
           </SectionIntro>
           <p className="mt-6 text-sm tracking-wide text-graphite">{professional.oab}</p>
           <div className="mt-10">
-            <h3 className="text-2xl text-ink">Formação e especializações</h3>
-            <ul className="mt-6 space-y-6 border-l border-champagne/70 pl-6">
+            <h3 className="text-2xl text-navy">Formação e especializações</h3>
+            <ul className="mt-6 space-y-6 border-l border-gold/45 pl-6">
               {credentials.map((item) => (
                 <li key={item.title}>
-                  <p className="font-serif text-2xl leading-snug text-ink">{item.title}</p>
+                  <p className="font-serif text-2xl leading-snug text-navy">{item.title}</p>
                   <p className="mt-1 text-sm leading-relaxed text-muted">{item.detail}</p>
                 </li>
               ))}
@@ -51,7 +51,7 @@ export function About() {
             alt={`Retrato profissional de ${professional.fullName}`}
             caption=""
             drawing="arch"
-            tone="sand"
+            tone="light"
             objectPosition="center 22%"
           />
         </div>

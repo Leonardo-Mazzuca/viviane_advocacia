@@ -48,7 +48,7 @@ export function PortraitFrame({
   alt: string
   caption: string
   drawing?: "facade" | "arch"
-  tone?: "navy" | "sand"
+  tone?: "navy" | "sand" | "light"
   priority?: boolean
   objectPosition?: string
 }) {
@@ -56,8 +56,21 @@ export function PortraitFrame({
 
   return (
     <figure className="w-full">
-      <div className={cn("relative", tone === "navy" ? "bg-navy text-cream" : "bg-sand text-navy/70")}>
-        <div className="pointer-events-none absolute inset-3 border border-current/25" aria-hidden="true" />
+      <div
+        className={cn(
+          "relative shadow-[0_24px_48px_-32px_rgba(20,36,61,0.22)]",
+          tone === "navy" && "bg-navy text-cream",
+          tone === "sand" && "bg-sand text-navy/70",
+          tone === "light" && "bg-paper text-navy",
+        )}
+      >
+        <div
+          className={cn(
+            "pointer-events-none absolute inset-3 border",
+            tone === "light" ? "border-gold/40" : "border-current/25",
+          )}
+          aria-hidden="true"
+        />
         <div className={cn("relative", hasPhoto ? "aspect-[4/5]" : "aspect-[4/3] max-h-[420px] lg:aspect-[4/5] lg:max-h-none")}>
           <div className="absolute inset-0">
             {hasPhoto ? (

@@ -2,6 +2,7 @@ import { useEffect, useRef, type KeyboardEvent } from "react"
 import { Link } from "react-router-dom"
 import { navLinks } from "@/data/navigation"
 import { whatsappUrl } from "@/lib/whatsapp"
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon"
 import { buttonClass } from "@/components/ui/button-styles"
 
 export function MobileMenu({ open, onNavigate }: { open: boolean; onNavigate: () => void }) {
@@ -50,7 +51,7 @@ export function MobileMenu({ open, onNavigate }: { open: boolean; onNavigate: ()
           <Link
             key={link.id}
             to={link.href}
-            className="border-b border-line py-4 text-[1.75rem] leading-tight text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze"
+            className="border-b border-line py-4 text-[1.75rem] leading-tight text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             onClick={onNavigate}
           >
             {link.label}
@@ -60,8 +61,9 @@ export function MobileMenu({ open, onNavigate }: { open: boolean; onNavigate: ()
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={buttonClass("primary", "mt-8 w-full")}
+          className={buttonClass("whatsapp", "mt-8 w-full")}
         >
+          <WhatsAppIcon className="h-5 w-5 shrink-0" />
           Falar pelo WhatsApp
           <span className="sr-only"> (abre em nova aba)</span>
         </a>

@@ -28,7 +28,7 @@ const steps = [
 
 export function Process() {
   return (
-    <Section labelId="processo-titulo" className="bg-paper">
+    <Section labelId="processo-titulo" className="bg-ivory">
       <Container>
         <SectionIntro eyebrow="Atendimento" title="Como podemos ajudar" titleId="processo-titulo" />
         <div className="relative mt-14 md:mt-16">
@@ -37,13 +37,13 @@ export function Process() {
             {steps.map((step, index) => (
               <StaggerItem as="li" key={step.number} className="relative flex gap-5 pb-10 md:block md:pb-0">
                 <div className="flex flex-col items-center md:items-start">
-                  <span className="relative z-[1] flex h-11 w-11 items-center justify-center border border-line bg-paper font-serif text-lg text-ink">
+                  <span className="relative z-[1] flex h-11 w-11 items-center justify-center border border-gold/35 bg-paper font-serif text-lg text-navy">
                     {step.number}
                   </span>
                   {index < steps.length - 1 ? <span className="w-px flex-1 bg-line md:hidden" aria-hidden="true" /> : null}
                 </div>
                 <div className="pt-1 md:mt-6 md:pt-0">
-                  <h3 className="text-2xl text-ink">{step.title}</h3>
+                  <h3 className="text-2xl text-navy">{step.title}</h3>
                   <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted">{step.text}</p>
                 </div>
               </StaggerItem>

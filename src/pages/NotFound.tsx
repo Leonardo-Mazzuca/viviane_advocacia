@@ -14,8 +14,8 @@ export function NotFound() {
         noCanonical
       />
       <Container className="max-w-xl">
-        <p className="text-[11px] tracking-[0.18em] text-bronze uppercase">404</p>
-        <h1 className="mt-4 text-4xl text-ink sm:text-5xl">Página não encontrada</h1>
+        <p className="text-[11px] tracking-[0.18em] text-gold uppercase">404</p>
+        <h1 className="mt-4 text-4xl text-navy sm:text-5xl">Página não encontrada</h1>
         <p className="mt-4 text-graphite">O endereço pode ter sido digitado de forma incompleta ou a página não faz parte deste site.</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link to="/" className={buttonClass("primary", "w-full sm:w-auto")}>
