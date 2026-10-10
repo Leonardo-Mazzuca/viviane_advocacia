@@ -3,27 +3,34 @@ import { contact, professional, serviceCoverage } from "@/data/site"
 import { footerLinks } from "@/data/navigation"
 import { whatsappUrl } from "@/lib/whatsapp"
 import { Container } from "@/components/layout/Container"
+import { InstagramIcon } from "@/components/ui/instagram-icon"
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon"
+
+const socialLinkClass =
+  "inline-flex min-h-11 items-center gap-2.5 text-sm text-graphite transition-colors hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
 
 export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-gold/25 bg-navy text-white">
-      <Container className="py-16 pb-28 md:pb-20">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <p className="font-serif text-3xl leading-tight text-white">{professional.fullName}</p>
-            <p className="mt-3 text-[11px] tracking-[0.22em] text-gold-light uppercase">{professional.role}</p>
-            <p className="mt-4 text-sm text-white/80">{professional.oab}</p>
+    <footer className="border-t border-line bg-ivory text-graphite">
+      <Container className="py-10 pb-28 md:py-12 md:pb-20">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+          <div className="w-full text-center lg:max-w-sm lg:text-left">
+            <p className="font-serif text-2xl leading-tight font-semibold text-navy sm:text-[1.75rem]">{professional.fullName}</p>
+            <p className="mt-1 text-[11px] tracking-[0.2em] text-gold uppercase">{professional.role}</p>
+            <p className="mt-3 text-xs leading-relaxed text-muted">
+              © {year} {professional.shortName}. {professional.oab}. {serviceCoverage.officeTitle}.
+            </p>
           </div>
-          <nav aria-label="Rodapé">
-            <p className="text-[11px] tracking-[0.18em] text-gold-light uppercase">Mapa</p>
-            <ul className="mt-4">
+
+          <nav aria-label="Rodapé" className="w-full lg:flex-1 lg:px-6">
+            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
               {footerLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="inline-flex min-h-11 items-center text-sm text-white/80 transition-colors hover:text-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                    className="inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                   >
                     {link.label}
                   </Link>
@@ -31,48 +38,33 @@ export function Footer() {
               ))}
             </ul>
           </nav>
-          <div>
-            <p className="text-[11px] tracking-[0.18em] text-gold-light uppercase">Contato</p>
-            <address className="mt-4 not-italic">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center text-sm text-white/80 hover:text-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-              >
-                {contact.phoneDisplay}
-                <span className="sr-only">, WhatsApp, abre em nova aba</span>
-              </a>
-              <a
-                href={`mailto:${contact.email}`}
-                className="inline-flex min-h-11 items-center text-sm break-all text-white/80 hover:text-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-              >
-                {contact.email}
-              </a>
-            </address>
-          </div>
-          <div>
-            <p className="text-[11px] tracking-[0.18em] text-gold-light uppercase">Instagram</p>
-            <a
-              href={contact.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex min-h-11 items-center text-sm text-white/80 hover:text-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-            >
+
+          <div className="flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center lg:w-auto lg:flex-col lg:items-end lg:gap-3">
+            <a href={contact.instagramUrl} target="_blank" rel="noopener noreferrer" className={socialLinkClass}>
+              <InstagramIcon className="h-[1.125rem] w-[1.125rem] shrink-0 text-navy" />
               {contact.instagram}
-              <span className="sr-only"> (abre em nova aba)</span>
+              <span className="sr-only"> (Instagram, abre em nova aba)</span>
             </a>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/80">
-              <span className="block font-medium text-white">{serviceCoverage.officeTitle}</span>
-              <span className="mt-1 block">{serviceCoverage.onlineTitle}.</span>
-            </p>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={socialLinkClass}>
+              <WhatsAppIcon className="h-[1.125rem] w-[1.125rem] shrink-0 text-navy" />
+              {contact.phoneDisplay}
+              <span className="sr-only"> (WhatsApp, abre em nova aba)</span>
+            </a>
           </div>
         </div>
-        <div className="mt-14 border-t border-gold/20 pt-6 text-sm leading-relaxed text-white/70">
-          <p>
-            © {year} {professional.fullName}. Todos os direitos reservados.
+
+        <div className="mt-10 border-t border-line pt-6 text-center text-xs leading-relaxed text-muted lg:text-left">
+          <p>As informações deste site têm caráter institucional e não representam consulta jurídica.</p>
+          <p className="mt-2">
+            <a
+              href={`mailto:${contact.email}`}
+              className="underline decoration-gold-light/60 underline-offset-2 hover:text-navy hover:decoration-gold"
+            >
+              {contact.email}
+            </a>
+            {" · "}
+            {serviceCoverage.onlineTitle}.
           </p>
-          <p className="mt-2">As informações deste site têm caráter institucional e não representam consulta jurídica.</p>
         </div>
       </Container>
     </footer>

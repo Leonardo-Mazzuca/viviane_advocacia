@@ -8,21 +8,12 @@ import { Section } from "@/components/layout/Section"
 import { buttonClass } from "@/components/ui/button-styles"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { CoverageHighlight } from "@/components/ui/coverage-highlight"
+import { InstagramIcon } from "@/components/ui/instagram-icon"
 
 function mark(Icon: LucideIcon) {
   return function Mark({ className }: { className?: string }) {
     return <Icon className={className} strokeWidth={1.5} aria-hidden="true" />
   }
-}
-
-function InstagramMark({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-      <rect x="3.5" y="3.5" width="17" height="17" rx="4" />
-      <circle cx="12" cy="12" r="3.6" />
-      <circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" stroke="none" />
-    </svg>
-  )
 }
 
 const rows: {
@@ -51,7 +42,7 @@ const rows: {
     value: contact.instagram,
     href: contact.instagramUrl,
     external: true,
-    icon: InstagramMark,
+    icon: ({ className }: { className?: string }) => <InstagramIcon className={className} />,
   },
 ]
 

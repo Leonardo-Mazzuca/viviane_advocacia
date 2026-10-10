@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout/Container"
 import { Section } from "@/components/layout/Section"
+import { ExperiencePhoto } from "@/components/experience/ExperiencePhoto"
 import { StaggerItem, StaggerList } from "@/components/ui/stagger"
 
 const pillars = [
@@ -32,6 +33,7 @@ export function Differentials() {
           </h2>
         </Container>
       </div>
+      <ExperiencePhoto />
       <Container className="py-16 md:py-20">
         <StaggerList className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {pillars.map((pillar) => (

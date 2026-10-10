@@ -31,6 +31,7 @@ export const serviceCoverage = {
 /** Fotografia em public/imgs/ (origem: pasta imgs na raiz do projeto). */
 export const assets = {
   portrait: "/imgs/viviane.jpeg",
+  office: "/imgs/viviane-escritorio.jpg",
 } as const
 
 export const portraits = {
